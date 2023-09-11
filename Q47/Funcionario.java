@@ -27,7 +27,8 @@ public class Funcionario {
 
     public double aumentaSalario( double valor){
         System.out.print("Novo salario: ");
-        return salario += valor;
+        setSalario(getSalario() + valor);
+        return valor;
 
     }
 
