@@ -4,11 +4,8 @@ import java.util.ArrayList;
 public class Agenda {
     private ArrayList<EntradaEmAgenda> Entrada = new ArrayList<>();
 
-    public Agenda(ArrayList<EntradaEmAgenda> entrada) {
-        Entrada = entrada;
-    }
-
-    public Agenda(EntradaEmAgenda ent) {
+    public Agenda() {
+        Entrada = new ArrayList<>();
     }
 
     public ArrayList<EntradaEmAgenda> getEntrada() {
@@ -19,17 +16,18 @@ public class Agenda {
         Entrada = entrada;
     }
 
-    public void listaDia(String dia, String mes, String ano){
-        for (EntradaEmAgenda Entrada : Entrada) {
-            System.out.println("Compromissos: " + Entrada);
-        }
-
+    public void addCompromisso(EntradaEmAgenda entrada){
+        Entrada.add(entrada);
     }
 
-
-    
-
-
+    public void listaDia(String dia, String mes, String ano){
+        System.out.println("Compromissos do dia: " + dia + " no mes: " + mes + " do ano: " + ano);
+        for (EntradaEmAgenda compromissos : Entrada) {
+            if (compromissos.ehnoDia(dia, mes, ano)) {
+                System.out.println("Compromissos: " + Entrada);   
+            } 
+        }
+    }
 }
 
 

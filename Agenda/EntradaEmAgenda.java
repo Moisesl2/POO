@@ -89,12 +89,7 @@ public class EntradaEmAgenda {
 
 
     public boolean ehnoDia(String dia, String mes, String ano){
-        if (dia == getDia() && mes == getMes() && ano == getAno()) {
-            System.out.println("Um compromisso foi adicionado!");
-            return true;
-        } else {
-            return false;
-        }
+        return this.dia == dia && this.mes == mes && this.ano == ano;
 
     }
 
